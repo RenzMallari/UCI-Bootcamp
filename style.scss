@@ -109,12 +109,12 @@ figcaption {
 .button {
   display: inline-block;
   background-color: #59331D;
-  border-radius: 0.7rem;
+  border-radius: .7rem;
   padding: 0.5rem 1rem;
   margin: 0;
   color: #f2f2f2;
   text-decoration: none;
-  border: 0.5rem solid #59331d;
+  border: .5rem solid #59331d;
 }
 
 .button:hover {
@@ -176,17 +176,29 @@ footer a {
     text-align: center;
   }
 }
-h2 {
-  font-size: 1.6rem;
-  font-family: "Poppins", sans-serif;
+
+$fontsize: .8rem;
+
+h2{
+  font-size: $fontsize + $fontsize;
+font-family: "Poppins", sans-serif;
 }
 
-h1 {
+@mixin boxmodel {
   color: red;
   background-color: black;
 }
 
-h1 {
-  margin: 150px;
-  padding: 150px;
-}/*# sourceMappingURL=style.css.map */
+h1{
+  @include boxmodel;
+}
+
+@mixin crazyspacing($martin, $patrick) {
+  margin:$martin;
+  padding:$patrick;
+}
+
+h1{
+  @include crazyspacing(150px,150px);
+}
+
